@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career & Interview App</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container py-4">
+
+<h2 class="text-center mb-4">Career & Interview Preparation App</h2>
+
+<div class="row g-3">
+
+<div class="col-md-4">
+<div class="card">
+<div class="card-body text-center">
+<h5>Placement Preparation</h5>
+<button class="btn btn-primary" onclick="openPage('placement')">Open</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<div class="card-body text-center">
+<h5>HR Interview Questions</h5>
+<button class="btn btn-primary" onclick="openPage('hr')">Open</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<div class="card-body text-center">
+<h5>Aptitude Practice</h5>
+<button class="btn btn-primary" onclick="openPage('aptitude')">Open</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<div class="card-body text-center">
+<h5>Mock Technical Interview</h5>
+<button class="btn btn-primary" onclick="openPage('technical')">Open</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<div class="card-body text-center">
+<h5>Resume Feedback</h5>
+<button class="btn btn-primary" onclick="openPage('resume')">Open</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+function openPage(type){
+
+let content = "";
+
+if(type === "placement"){
+content = `
+<h2>Placement Preparation</h2>
+<ul>
+<li>Practice DSA daily</li>
+<li>Build projects</li>
+<li>Prepare coding interviews</li>
+<li>Improve communication skills</li>
+</ul>`;
+}
+
+if(type === "hr"){
+content = `
+<h2>HR Interview Questions</h2>
+<ul>
+<li>Tell me about yourself</li>
+<li>Why should we hire you?</li>
+<li>Your strengths and weaknesses?</li>
+<li>Where do you see yourself in 5 years?</li>
+</ul>`;
+}
+
+if(type === "aptitude"){
+content = `
+<h2>Aptitude Question</h2>
+<p>What is 15 + 27 ?</p>
+<button onclick="alert('Correct!')">42</button>
+<button onclick="alert('Wrong')">40</button>
+<button onclick="alert('Wrong')">30</button>
+`;
+}
+
+if(type === "technical"){
+content = `
+<h2>Technical Interview</h2>
+<ul>
+<li>What is Python?</li>
+<li>Explain OOP</li>
+<li>Difference between Stack and Queue</li>
+<li>What is REST API?</li>
+</ul>`;
+}
+
+if(type === "resume"){
+content = `
+<h2>Resume Feedback</h2>
+<ul>
+<li>Add strong projects</li>
+<li>Use bullet points</li>
+<li>Keep resume 1 page</li>
+<li>Highlight technical skills</li>
+</ul>`;
+}
+
+let newWindow = window.open("", "_blank");
+
+newWindow.document.open();
+newWindow.document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container p-4">
+${content}
+</body>
+</html>
+`);
+newWindow.document.close();
+
+}
+
+</script>
+
+</body>
+</html>
